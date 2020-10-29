@@ -1,0 +1,40 @@
+.kip-alert{
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  padding: 8px 15px 8px 37px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-weight: $font-weight-normal;
+  @include alert-size(.5rem,1rem,2px);
+  span{
+    display: block;
+  }
+}
+.kip-alert-default{
+  @include alert-style($primary);
+}
+
+.kip-alert-success{
+  @include alert-style($success);
+}
+
+.kip-alert-danger{
+  @include alert-style($danger);
+}
+
+.kip-alert-warning{
+  @include alert-style($warning);
+}
+
+.kip-alert-bold-title{
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  margin-bottom: .25rem;
+}
+
+.kip-alert-descripiton{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: $font-weight-light;
+}

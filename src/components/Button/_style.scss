@@ -1,0 +1,91 @@
+
+.kip-btn{
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color:$body-color;
+  white-space:nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  @include button-size($btn-padding-y,$btn-padding-x,$btn-font-size,$border-radius);  // mixins
+  // padding: $btn-padding-y $btn-padding-x;
+  // font-size: $btn-font-size;
+  // border-radius: $border-radius;
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &.disabled,
+  &[disabled]{
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+    > *{  // 所有子元素
+      pointer-events: none;
+    }
+  }
+  &.btn-round{
+    border-radius: $border-round-radius;
+    min-width: $border-round-radius * 2;
+  }
+}
+
+.btn-lg{
+  @include button-size($btn-padding-y-lg,$btn-padding-x-lg,$btn-font-size-lg,$border-radius-lg);
+  &.btn-round{
+    border-radius: $border-round-radius-lg;
+    min-width: $border-round-radius-lg * 2;
+  }
+}
+
+.btn-sm{
+  @include button-size($btn-padding-y-sm,$btn-padding-x-sm,$btn-font-size-sm,$border-radius-sm);
+  &.btn-round{
+    border-radius: $border-round-radius-sm;
+    min-width: $border-round-radius-sm * 2;
+  }
+}
+
+.btn-primary{
+  @include button-style($primary,$primary,$white);
+  border:$btn-border-width solid $primary;
+}
+
+.btn-dashed{
+  @include button-style($white,$gray-400,$body-color,$white,$primary,$primary);
+  border:$btn-border-width dashed $gray-400;;
+}
+
+.btn-danger{
+  @include button-style($danger,$danger,$white);
+  border:1px solid transparent;
+}
+
+.btn-default{
+  @include button-style($white,$gray-400,$body-color,$white,$primary,$primary);// 背景、边框、字体、浮动背景、浮动边框、浮动字体
+  border:$btn-border-width solid $gray-400;
+}
+
+.btn-link{
+  font-weight: $font-weight-normal;
+  color:$blue;
+  text-decoration: $link-decoration;
+  border:$btn-border-width solid transparent;
+  box-shadow: none;
+  background: none;
+  outline: none;
+  &:hover{
+    color:$btn-link-hover-color;
+    text-decoration: $link-decoration;
+  }
+  &:disabled,
+  &.disabled{
+    color:$btn-link-disabled-color;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-shadow: none;
+  }
+}
+

@@ -1,0 +1,59 @@
+.kip-tabs{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid #dee2e6;
+  >.kip-tabs-item{
+    padding: $menu-item-padding-y $menu-item-padding-x ;
+    border-bottom: $menu-item-active-border-width solid transparent;
+    cursor: pointer;
+    transition: $menu-transition;
+    &:hover,&.focus{
+      text-decoration: none;
+    }
+    &.is-disabled{
+      color:$menu-item-disabled-color;
+      pointer-events: none;
+      cursor: default;
+    }
+    &:hover{
+      color: $menu-item-active-color;
+    }
+    &.is-active{
+      color: $menu-item-active-color;
+      border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+    }
+  }
+  &.is-card{
+    >.kip-tabs-item{
+      padding: $menu-item-padding-y $menu-item-padding-x ;
+      border: $menu-item-active-border-width solid transparent;
+      cursor: pointer;
+      transition: $menu-transition;
+      &:hover,&.focus{
+        text-decoration: none;
+      }
+      &.is-disabled{
+        color:$menu-item-disabled-color;
+        pointer-events: none;
+        cursor: default;
+      }
+      &:hover{
+        color: $menu-item-active-color;
+      }
+      &.is-active{
+        color: $menu-item-active-color;
+        border-color: #dee2e6 #dee2e6 #fff;
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+        margin-bottom: -1px;
+      }
+    }
+  
+  }
+  
+}
+
