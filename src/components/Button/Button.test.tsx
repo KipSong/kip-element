@@ -1,5 +1,5 @@
 import React from 'react'
-import Button, { ButtonProps, ButtonSize, ButtonShape, ButtonType } from './button'
+import Button, { ButtonProps } from './Button'
 
 import { render, fireEvent } from '@testing-library/react'
 
@@ -8,8 +8,8 @@ const defaultProps = {
 }
 
 const testProps: ButtonProps = {
-  btnType: ButtonType.Default,
-  size: ButtonSize.Large,
+  btnType: 'default',
+  size: 'lg',
   className: 'klass'
 }
 
@@ -40,7 +40,7 @@ describe('test Button component', () => {
   })
 
   it('should render a link btnType equals link and href is provided', () => {
-    const wrapper = render(<Button btnType={ButtonType.Link} href="http://wwww.baidu.com">Link</Button>)
+    const wrapper = render(<Button btnType='link' href="http://wwww.baidu.com">Link</Button>)
     const element = wrapper.getByText('Link')
     expect(element).toBeTruthy()  // 是否存在
     expect(element.tagName).toEqual('A')
