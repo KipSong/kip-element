@@ -1,15 +1,24 @@
 import React, { useContext, FunctionComponentElement, useState } from 'react'
 // import { CSSTransition } from "react-transition-group";
 import classNames from 'classnames'
-import { MenuContext } from './menu'
-import { MenuItemProps } from './menuItem'
-import Icon from './../Icon/icon'
-import Transition from '../Transition/transition'
+import { MenuContext } from './Menu'
+import { MenuItemProps } from './MenuItem'
+import Icon from '../Icon/Icon'
+import Transition from '../Transition/Transition'
 
 
 export interface SubMenuProps {
+  /**
+   * 选中下标
+   */
   index?: string;
+  /**
+   * 菜单名称
+   */
   title: string;
+  /**
+   * 可扩展className
+   */
   className?: string;
 }
 

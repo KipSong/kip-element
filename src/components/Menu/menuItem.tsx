@@ -1,11 +1,23 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { MenuContext } from './menu'
+import { MenuContext } from './Menu'
 
 export interface MenuItemProps {
+  /**
+   * 下标
+   */
   index?: string;
+  /**
+   * 是否禁用
+   */
   disabled?: boolean;
+  /**
+   * 可扩展className
+   */
   className?: string;
+  /**
+   * 可扩展样式
+   */
   style?: React.CSSProperties;
 }
 

@@ -5,9 +5,15 @@ import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontaw
 export type ThemeProps = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark'
 
 export interface IconProps extends FontAwesomeIconProps {
-  theme?: ThemeProps
+  /**
+   * 主题颜色
+   */
+  theme?: ThemeProps;
 }
 
+/**
+ * Icon 图标 集成react-fontwesome
+ */
 const Icon: React.FC<IconProps> = (props) => {
   const { className, theme, ...restProps } = props;
   const classes = classNames('kip-icon', className, {

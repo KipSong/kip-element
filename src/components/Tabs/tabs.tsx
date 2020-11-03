@@ -1,14 +1,26 @@
 import React, { createContext, useState } from 'react'
 import classNames from 'classnames'
-import { TabsItem } from './tabsItem'
+import { TabsItem } from './TabsItem'
 
 type selectCallBack = (index: number) => void
 type tabsType = 'card' | 'line'
 
-interface TabsProps {
+export interface TabsProps {
+  /**
+   * 默认选中下标
+   */
   defaultIndex?: number;
+  /**
+   * 可扩展className
+   */
   className?: string;
+  /**
+   * tabs 类型
+   */
   type?: tabsType;
+  /**
+   * 选中回掉
+   */
   onSelect?: selectCallBack;
 }
 
@@ -19,6 +31,9 @@ interface ITableContext {
 
 export const TabContext = createContext<ITableContext>({ index: 0 })
 
+/**
+ * Tabs 标签页
+ */
 const Tabs: React.FC<TabsProps> = (props) => {
   const { defaultIndex, className, type, onSelect, children } = props
   const [activeIndex, setActive] = useState(defaultIndex)

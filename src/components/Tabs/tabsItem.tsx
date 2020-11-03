@@ -1,13 +1,23 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { TabContext } from './tabs'
+import { TabContext } from './Tabs'
 
 export interface TabsItem {
+  /**
+   * 选项卡头显示文字
+   */
   label: React.ReactNode,
+  /**
+   * 对应 defaultIndex
+   */
+  index?: number;
+  /**
+   * 是否禁用
+   */
   disabled?: boolean;
   className?: string;
-  index?: number;
-  children?:React.ReactNode
+
+  children?: React.ReactNode
 }
 
 const TabsItem: React.FC<TabsItem> = (props) => {
@@ -15,7 +25,7 @@ const TabsItem: React.FC<TabsItem> = (props) => {
   const context = useContext(TabContext)
   const classes = classNames('kip-tabs-item', className, {
     'is-active': index === context.index,
-    'is-disabled':disabled
+    'is-disabled': disabled
   })
   const handleClick = () => {
     if (context.onSelect && !disabled && typeof index === 'number') {
