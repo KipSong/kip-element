@@ -9,13 +9,13 @@ import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
 import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
-import AutoComplete from './components/AutoComplete/AutoComplete'
+// import AutoComplete from './components/AutoComplete/AutoComplete'
 library.add(fas)
 
 
-const fetchSuggestions = (query: string) => {
-  return [{label:'123',value:'123'}] 
-}
+// const fetchSuggestions = (query: string) => {
+//   return [{label:'123',value:'123'}] 
+// }
 
 function App() {
 
@@ -48,9 +48,9 @@ function App() {
         </Menu>
 
         <Icon icon='coffee' theme='danger'></Icon>
-        <AutoComplete fetchSuggestions={fetchSuggestions}>
+        {/* <AutoComplete fetchSuggestions={fetchSuggestions}>
 
-        </AutoComplete>
+        </AutoComplete> */}
       </header>
     </div>
   );
