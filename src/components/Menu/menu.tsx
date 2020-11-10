@@ -6,7 +6,7 @@ type MenuMode = 'horizontal' | 'vertical'
 type selectCallBack = (selectedIndex: string) => void
 
 export interface MenuProps {
-  /**
+  /** 
    * 菜单类型
    */
   mode?: MenuMode;
