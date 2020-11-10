@@ -33,6 +33,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     onSelect,
     value,
     renderOption,
+    style,
     ...restProps
   } = props
 
@@ -142,7 +143,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
     )
   }
   return (
-    <div className="kip-auto-complete" ref={componentRef}>
+    <div className="kip-auto-complete" style={style} ref={componentRef}>
       <Input
         value={inputValue}
         onChange={handleChange}
