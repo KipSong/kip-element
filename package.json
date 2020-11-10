@@ -44,13 +44,18 @@
     "lint": "eslint --ext js,ts,tsx src --max-warnings 10",
     "build": "npm run clearn && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
-    "test:nowatch":"cross-env CI=true react-scripts test",
+    "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublish": "npm run build"
+    "prepublish": "npm run test:nowatch && npm run lint && npm run build"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"npm run test:nowatch && npm run lint"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -88,6 +93,7 @@
     "@types/react-transition-group": "^4.4.0",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-docgen-typescript": "^1.20.5",
