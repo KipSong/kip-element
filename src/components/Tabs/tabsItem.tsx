@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { TabContext } from './Tabs'
 
-export interface TabsItem {
+export interface TabsItemProps {
   /**
    * 选项卡头显示文字
    */
@@ -20,7 +20,7 @@ export interface TabsItem {
   children?: React.ReactNode
 }
 
-const TabsItem: React.FC<TabsItem> = (props) => {
+const TabsItem: React.FC<TabsItemProps> = (props) => {
   const { label, disabled, className, index } = props
   const context = useContext(TabContext)
   const classes = classNames('kip-tabs-item', className, {

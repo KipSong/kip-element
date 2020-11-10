@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import classNames from 'classnames'
-import { TabsItem } from './TabsItem'
+import { TabsItemProps } from './TabsItem'
 
 type selectCallBack = (index: number) => void
 type tabsType = 'card' | 'line'
@@ -55,7 +55,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
   const renderContainer = () => {
     let container;
     React.Children.forEach(children, (child, index) => {
-      const childElement = child as React.FunctionComponentElement<TabsItem>
+      const childElement = child as React.FunctionComponentElement<TabsItemProps>
       const { displayName } = childElement.type
       if (displayName === 'TabsItem' && activeIndex === index) {
         container = React.cloneElement(childElement).props.children
@@ -66,7 +66,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
 
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
-      const childElement = child as React.FunctionComponentElement<TabsItem>
+      const childElement = child as React.FunctionComponentElement<TabsItemProps>
       const { displayName } = childElement.type
       if (displayName === 'TabsItem') {
         return React.cloneElement(childElement, { index })

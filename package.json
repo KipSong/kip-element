@@ -1,7 +1,30 @@
 {
-  "name": "hefa",
+  "name": "kip-element",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "simple react components",
+  "author": {
+    "name": "kipsong",
+    "email": "kipsong@sina.com"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "React",
+    "kipsong"
+  ],
+  "homepage": "https://github.com/KipSong/kip-element",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KipSong/kip-element"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -28,11 +51,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clearn": "rimraf ./dist",
+    "build": "npm run clearn && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,6 +87,7 @@
     "@storybook/react": "^6.0.27",
     "babel-loader": "^8.1.0",
     "react-docgen-typescript": "^1.20.5",
-    "react-is": "^16.12.0"
+    "react-is": "^16.12.0",
+    "rimraf": "^3.0.2"
   }
 }
